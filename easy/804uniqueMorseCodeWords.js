@@ -19,3 +19,10 @@ Constraints:
 words[i] consists of lowercase English letters.
  */
 
+let uniqueMorseRepresentations = function(words) {
+    let morseAlpha = { a: ".-", b: "-...", c: "-.-.", d: "-..", e: ".", f: "..-.", g: "--.", h: "....", i: "..", j: ".---", k: "-.-", l: ".-..", m: "--", n: "-.", o: "---", p: ".--.", q: "--.-", r: ".-.", s: "...", t: "-", u: "..-", v: "...-", w: ".--", x: "-..-", y: "-.--", z: "--.."}
+
+    return new Set(words.map(word => word.split('').map(letter => morseAlpha[letter]).join(''))).size
+}
+
+console.log(["gin", "zen", "gig", "msg"])
