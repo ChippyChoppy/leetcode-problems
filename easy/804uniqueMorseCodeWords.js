@@ -25,4 +25,4 @@ let uniqueMorseRepresentations = function(words) {
     return new Set(words.map(word => word.split('').map(letter => morseAlpha[letter]).join(''))).size
 }
 
-console.log(["gin", "zen", "gig", "msg"])
+console.log(uniqueMorseRepresentations(["gin", "zen", "gig", "msg"]))
