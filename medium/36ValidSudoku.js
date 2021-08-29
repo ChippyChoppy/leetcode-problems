@@ -41,7 +41,7 @@ board[i][j] is a digit or '.'.
  */
 
 const isValidSudoku = (board) => {
-    for (let i = 0; i < board.length; j++) {
+    for (let i = 0; i < board.length; i++) {
         let row = new Set()
         let column = new Set()
         let miniBoard = new Set()
