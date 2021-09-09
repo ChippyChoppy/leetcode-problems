@@ -25,5 +25,24 @@ const generateTrees = (n) => {
 };
 
 const generateNodes = (start,end) => {
-    
+    let nodes = []
+    let node = null
+    let left = []
+    let right = []
+
+    for (let i = start; i <=end; i++) {
+        left = generateNodes(start, i - 1)
+        right = generateNodes(i + 1, end)
+        for (let j = 0; j < left.length; j++) {
+            for (let k = 0; k < right.length; k++) {
+                node = new TreeNode(i)
+                node.left = left[j]
+                node.right = right[k]
+                nodes.push(node)
+            }
+        }
+    }
+    return nodes.length ? nodes : [null]
 }
+
+console.log(generateTrees(3))
