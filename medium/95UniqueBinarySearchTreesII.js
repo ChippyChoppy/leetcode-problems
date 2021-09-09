@@ -12,3 +12,18 @@ Output: [[1]]
 Constraints:
 1 <= n <= 8
  */
+
+function TreeNode(val, left, right) {
+    this.val = (val===undefined ? 0 : val)
+    this.left = (left===undefined ? null : left)
+    this.right = (right===undefined ? null : right)
+};
+
+const generateTrees = (n) => {
+    if (n < 1) return [];
+    return generateNodes(1,n)
+};
+
+const generateNodes = (start,end) => {
+    
+}
