@@ -23,3 +23,8 @@ points[i].length == 2
 All the given points are unique.
  */
 
+const outerTrees = (trees) => {
+    trees.sort((b,a) => (a[0] === b[0] ? a[1] - b[1] : a[0] - b[0]));
+
+    let stack = [];
+}
