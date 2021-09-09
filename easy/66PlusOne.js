@@ -37,3 +37,19 @@ Constraints:
 digits does not contain any leading 0's.
  */
 
+const plusOne = (digits) => {
+    let i = digits.length - 1;
+
+    while (i >= 0) {
+        if (digits[i] === 9) {
+            digits[i] = 0
+            i--
+        } else {
+            digits[i] = digits[i] + 1
+            return digits
+        }
+    }
+    return [1,...digits]
+};
+
+console.log(plusOne([8,9,9,9]))
