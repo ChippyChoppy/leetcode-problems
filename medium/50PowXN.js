@@ -20,7 +20,7 @@ Constraints:
 -104 <= xn <= 104
  */
 
-cons myPow = (x,n) => {
+const myPow = (x,n) => {
     if (n === 0) {
         return 1;
     }
@@ -35,4 +35,4 @@ cons myPow = (x,n) => {
     }
 }
 
-console.log(myPow(3,3))
+console.log(myPow(11,5))
