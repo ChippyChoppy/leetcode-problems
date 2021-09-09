@@ -29,7 +29,7 @@ const outerTrees = (trees) => {
     let stack = [];
 
     const checkDistance = (arr, currentLocation) => {
-        (arr[1][1] - arr[0][1]) * (currentLocation[0] - arr[1][0]) <(arr[1][0] - arr[0][0]) * (currentLocation[1] - arr[1][1]);
+        return (arr[1][1] - arr[0][1]) * (currentLocation[0] - arr[1][0]) < (arr[1][0] - arr[0][0]) * (currentLocation[1] - arr[1][1]);
     }
 
     for (let tree of sorted) {
@@ -45,5 +45,7 @@ const outerTrees = (trees) => {
         }
         stack.push(sorted[i]);
     }
-    return [...new Set(stack.map(JSON.stringify))].map(JSON.parse);
+    return [...new Set(stack)]
 }
+
+console.log(outerTrees([[1,1],[2,2],[2,0],[2,4],[3,3],[4,2]]))
