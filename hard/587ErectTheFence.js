@@ -24,7 +24,26 @@ All the given points are unique.
  */
 
 const outerTrees = (trees) => {
-    trees.sort((b,a) => (a[0] === b[0] ? a[1] - b[1] : a[0] - b[0]));
+    let sorted = trees.sort((b,a) => (a[0] === b[0] ? a[1] - b[1] : a[0] - b[0]));
 
     let stack = [];
+
+    const checkDistance = (arr, currentLocation) => {
+        (arr[1][1] - arr[0][1]) * (currentLocation[0] - arr[1][0]) <(arr[1][0] - arr[0][0]) * (currentLocation[1] - arr[1][1]);
+    }
+
+    for (let tree of sorted) {
+        while (stack.length >= 2 && checkDistance(stack.slice(-2), tree)) {
+            stack.pop();
+        }
+        stack.push(tree);
+    }
+
+    for (let i = trees.length - 1; i >= 0; i--) {
+        while (stack.length >= 2 && checkDistance(stack.slice(-2), sorted[i])) {
+            stack.pop();
+        }
+        stack.push(sorted[i]);
+    }
+    return [...new Set(stack.map(JSON.stringify))].map(JSON.parse);
 }
