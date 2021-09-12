@@ -37,10 +37,11 @@ const lengthOfLongestSubstring = (s) => {
 
     for (let i = 0; i < s.length; i++) {
         const charIdx = currSubString.indexOf(s[i])
+        console.log(currSubString)
         if (charIdx !== -1) {
             currSubString.splice(0, charIdx + 1)
         }
-        currSubString.push(s[1])
+        currSubString.push(s[i])
         longestLength = Math.max(longestLength, currSubString.length)
     }
     return longestLength
