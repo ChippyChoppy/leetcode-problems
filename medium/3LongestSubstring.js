@@ -47,4 +47,4 @@ const lengthOfLongestSubstring = (s) => {
     return longestLength
 }
 
-console.log(lengthOfLongestSubstring('abcabcdabc'))
+console.log(lengthOfLongestSubstring('abcdefghijklmnopqrstuvwxyaz'))
