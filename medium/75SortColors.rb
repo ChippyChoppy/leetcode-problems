@@ -18,6 +18,7 @@ def sort_colors(nums)
             end
             j += 1
         end 
+        puts '#{nums}'
         i -= 1       
     end
     puts nums
