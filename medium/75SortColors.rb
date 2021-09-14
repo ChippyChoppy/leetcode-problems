@@ -6,3 +6,19 @@
 
 # You must solve this problem without using the library's sort function.
 
+def sort_colors(nums)
+    i = nums.length - 1
+    while i >= 0 
+        j = 0
+        while j < i 
+            if nums[j] > nums[j + 1]
+                temp = nums[j]
+                nums[j] = nums[j + 1]
+                nums[j + 1] = temp
+            end
+            j += 1
+        end 
+        i -= 1       
+    end
+    puts nums
+end
