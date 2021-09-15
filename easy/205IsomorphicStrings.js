@@ -36,6 +36,11 @@ function isIsomorphicMap(s,t) {
     const tStringMap = new Map();
 
     for (let i = 0; i < s.length; i++) {
-        if ((sStringMap.has(s[i]) && sStringMap.get(s[i]) !== t[i]) || (tStringMap.has(t[i]) && tStringMap.get(t[i]) !== s[i]))
+        if ((sStringMap.has(s[i]) && sStringMap.get(s[i]) !== t[i]) || (tStringMap.has(t[i]) && tStringMap.get(t[i]) !== s[i])) {
+            return false
+        }
+        sStringMap.set(s[i], t[i])
+        tStringMap.set(t[i], s[i])
     }
+    return true
 }
