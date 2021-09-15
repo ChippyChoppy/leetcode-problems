@@ -29,3 +29,13 @@ function isIsomorphic(s,t) {
     return replaceWithIndex(s) == replaceWithIndex(t)
 }
 const replaceWithIndex = str => str.replace(/(.)/g, x => `${str.indexOf(x)}`)
+
+function isIsomorphicMap(s,t) {
+    if (s.length !== t.length) return false
+    const sStringMap = new Map();
+    const tStringMap = new Map();
+
+    for (let i = 0; i < s.length; i++) {
+        
+    }
+}
