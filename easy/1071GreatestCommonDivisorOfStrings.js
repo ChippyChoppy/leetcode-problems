@@ -27,3 +27,24 @@ Constraints:
 str1 and str2 consist of English uppercase letters.
  */
 
+const puttingStringsTogether = function(string, howManyTimes) {
+    if (howManyTimes === 1) return string;
+    return string + puttingStringsTogether(string, howManyTimes - 1)
+}
+
+const gcdOfStrings = function(str1, str2) {
+    let divisor = ""
+    let i = 0
+    while (i < str2.length) {
+        let currDivisor = str2.slice(0, i + 1)
+        if (str1.length % currDivisor.length === 0 && str2.length % currDivisor.length === 0) {
+            if (str1 === (puttingStringsTogether(currDivisor, str1.length/currDivisor.length)) && str2 === (puttingStringsTogether(currDivisor, str2.length/currDivisor.length))) {
+                divisor = currDivisor;
+            }
+        }
+        i++
+    }
+    return divisor
+}
+
+console.log(gcdOfStrings("ABCABC", "AB"))
