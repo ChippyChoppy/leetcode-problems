@@ -20,6 +20,24 @@ Constraints:
 0 <= k <= 105
  */
 
+// const containsDupes = (nums, k) => {
+//     const dupes = {}
+//     let hasDupes = false
+//     let i = 0
+//     while (i < nums.length) {
+//         let key = nums[i]
+//         console.log("key", key)
+//         console.log("dupes key", dupes[key])
+//         console.log(key in dupes)
+//         !key in dupes ? dupes[key] = i : Math.abs(i - dupes[key]) <= k ? hasDupes = true : dupes[key] = i
+//         if (hasDupes === true) break
+//         i++
+//         console.log(dupes, hasDupes)
+//     }
+//     return hasDupes
+// }
+// console.log(containsDupes([1, 1, 6, 1, 2, 4, 3, 1, 1], 1))
+
 var containsNearbyDuplicate = function (nums, k) {
     const dupesMap = new Map()
     let i = 0
