@@ -21,11 +21,16 @@
             // Sieve of Eratosthenes is O (n log log n)
             for (let j = i; j * i < isPrime.length; j++) {
                 // console.log("j -->", j, "j * i -->", j * i)
+                // console.log("before", isPrime[i * j])
                 isPrime[i * j] = false
+                // console.log("after", isPrime[i * j])
+
                 // console.log("!prime = F", isPrime)
             }
         }
     }
+            console.log(isPrime[7])
+
     let totalPrime = 0
     //start at 2 since it's our known first prime number, and count what is still true
     for (let i = 2; i < isPrime.length; i++) {
@@ -35,6 +40,8 @@
     }
     return totalPrime
 };
+
+console.log(countPrimes(30))
 /*
 n = 30, we're going to ignore index 0 and 1 because they are alway irrelevant when talking about prime numbers
     T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T  T <-- boolean
