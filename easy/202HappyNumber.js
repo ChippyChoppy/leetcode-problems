@@ -30,12 +30,17 @@ const isHappy = (n) => {
     while (n !== 1) {
         let squaredSum = 0
         while (n > 0) {
+            console.log("line33", "n", n)
+            console.log("line34", n % 10, "*", n % 10, "=", (n%10) * (n%10))
             squaredSum += (n % 10) * (n % 10)
+            console.log("line36", "summed", squaredSum)
             n = Math.floor(n / 10)
+            console.log("line38", "n", n)
         }
         if (!happyHash.has(squaredSum)) {
             happyHash.add(squaredSum)
             n = squaredSum
+            console.log("line43", "hash", happyHash)
         } else {
             happyNum = false
             return happyNum
@@ -44,4 +49,4 @@ const isHappy = (n) => {
     return happyNum
 }
 
-console.log(isHappy(2))
+console.log(isHappy(19))
