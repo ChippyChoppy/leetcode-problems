@@ -34,4 +34,4 @@ const canConstruct = function(ransomeNote, magazine) {
     return true 
 }
 
-console.log(canConstruct("give me money","abcdef ghijklmno pqrstuvwxyz eem"))
+console.log(canConstruct("give me money","abcdef ghijklmno pqrsvwxyz eem"))
