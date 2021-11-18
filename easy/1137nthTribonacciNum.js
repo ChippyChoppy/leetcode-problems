@@ -16,3 +16,16 @@ Input: n = 25
 Output: 1389537
  */
 
+const tribonacci = function(n) {
+    const tribArray = [0,1,1]
+    if (n < 3) {
+        return tribArray[n]
+    }
+    for (let i = 3; i <= n; i++) {
+        console.log(tribArray[i - 3], '+', tribArray[i - 2], '+', tribArray[i - 1], '=', tribArray[i - 3] + tribArray[i - 2] + tribArray[i - 1])
+        tribArray.push(tribArray[i-3] + tribArray[i-2] + tribArray[i - 1])
+    }
+    return tribArray[n]
+}
+
+console.log(tribonacci(25))
