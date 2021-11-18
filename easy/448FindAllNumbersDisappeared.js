@@ -10,6 +10,7 @@ Input: nums = [1,1]
 Output: [2]
  */ 
 
+/*** Slow and memory heavy ***/ 
 const findDisappearedNumbers = (nums) => {
     nums.sort((a,b) => a - b)
     const numSet = new Set()
@@ -26,3 +27,20 @@ const findDisappearedNumbers = (nums) => {
 }
 
 console.log(findDisappearedNumbers([1,2,3,4,6,8,9,11,1,1,2,5,7]))
+
+/*** Super Speedy and easy on the memory! ***/
+
+const findDisappearedNumbersFast = (nums) => {
+    for (let i = 0; i < nums.length; i++) {
+        const index = Math.abs(nums[i]) - 1
+        nums[index] = - Math.abs(nums[index])
+    }
+    let disappeared = new Array
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            disappeared.push(i + 1)
+        }
+    }
+    return disappeared
+}
+console.log(findDisappearedNumbersFast([1,2,3,4,6,8,9,11,1,1,2,5,7]))
