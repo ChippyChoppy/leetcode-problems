@@ -33,8 +33,9 @@ const maxPower = function(s) {
 }
 
 /***
- * 
- */
+ * compare two pointers and keep running max
+ * using two if statements means we'll check ((j - i) + 1) < or > max every iteration
+ ***/
 const maxPower = (s) => {
     let max = 1
     let i = 0
