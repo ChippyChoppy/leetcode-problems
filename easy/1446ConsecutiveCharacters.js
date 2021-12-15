@@ -49,3 +49,26 @@ const maxPower = (s) => {
     }
     return max
 }
+
+/***
+ * keep a current count (counting # of consecutive letters) 
+ * increase current when s[i - 1] === s[i]
+ * when s[i - 1] !== s[i] set current = 1
+ * every iterations check if current > max, and if so max = current
+ * ***/
+
+const maxPower = (s) => {
+    let current = 1
+    let max = 0
+    for (let i = 0; i < s.length; i++) {
+        if (s[i - 1] === s[i]) {
+            current++
+        } else {
+            current = 1
+        } 
+        if (current > max) {
+            max = current 
+        }
+    }
+    return max
+}
