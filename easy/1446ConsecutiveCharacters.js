@@ -32,6 +32,19 @@ const maxPower = function(s) {
     return Math.max(...max)
 }
 
+/***
+ * 
+ */
 const maxPower = (s) => {
-    
+    let max = 1
+    let i = 0
+    for (let j = 0; j < s.length; j++) {
+        if (s[i] !== s[j]) {
+            i = j
+        }
+        if ((j - i) + 1 > max) {
+            max = (j - i) + 1
+        }
+    }
+    return max
 }
